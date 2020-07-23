@@ -9,30 +9,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * The entry point for client to access user, todos combinations
- */
+/** The entry point for client to access user, todos combinations */
 @RestController
 @RequestMapping("/todos")
-public class TodosController
-{
-    /**
-     * Using the Todos service to process user, todos combinations data
-     */
+public class TodosController {
+    /** Using the Todos service to process user, todos combinations data */
     @Autowired
     TodosService todosService;
 
-    /**
-     * Given the todo id, mark the task as complete
+    /** Given the to do id, mark the task as complete
      * <br>Example: <a href="http://localhost:2019/todos/todo/7">http://localhost:2019/todos/todo/7</a>
-     *
-     * @param todoid The todo to be marked complete
-     * @return Status of OK
-     */
+     * @param todoid The to do to be marked complete
+     * @return Status of OK */
     @PatchMapping(value = "/todo/{todoid}")
-    public ResponseEntity<?> completeTodo(@PathVariable long todoid)
-    {
+    public ResponseEntity<?> completeTodo(@PathVariable long todoid) {
+
         todosService.markComplete(todoid);
         return new ResponseEntity<>(HttpStatus.OK);
+
     }
 }

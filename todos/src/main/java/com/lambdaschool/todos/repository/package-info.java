@@ -1,7 +1,5 @@
-/**
- * Contains the links between the database and the application.
+/** Contains the links between the database and the application.
  * Typically contains one class for each persistent, database, model.
- *
  * @author John Mitchell (john@lambdaschool.com) with Lambda School unless otherwise noted.
- */
+ * @editor Michael Johnson :D */
 package com.lambdaschool.todos.repository;
